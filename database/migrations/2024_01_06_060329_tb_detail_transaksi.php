@@ -11,21 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('tb_detail_transaksi', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable();
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->enum('role', ['admin', 'kasir'])->nullable();
+            $table->string('no_transaksi');
+            $table->integer('id_barang');
+            $table->integer('qty');
             $table->timestamps();
-        });
-    }
+        });    }
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('tb_detail_transaksi');
     }
 };

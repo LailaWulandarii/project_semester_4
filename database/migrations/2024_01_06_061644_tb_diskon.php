@@ -11,21 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('tb_diskon', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable();
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->enum('role', ['admin', 'kasir'])->nullable();
+            $table->integer('total_belanja');
+            $table->integer('diskon')->nullable();
             $table->timestamps();
-        });
-    }
+        });    }
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('tb_diskon');
     }
 };
