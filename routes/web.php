@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-Route::get('/user', [HomeController::class, 'index']);
+Route::get('/dashboard', [HomeController::class, 'dashboard']);
 /*
 |--------------------------------------------------------------------------
 | Web Routes
