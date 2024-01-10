@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Quixlab - Bootstrap Admin Dashboard Template by Themefisher.com</title>
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('/assets/images/favicon.png') }}">
     <!-- Custom Stylesheet -->
-    <link href="/assets/plugins/tables/css/datatable/dataTables.bootstrap4.min.css" rel="stylesheet">
-    <link href="/assets/css/style.css" rel="stylesheet">
+    <link href="{{ asset('/assets/plugins/tables/css/datatable/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('/assets/css/style.css') }}" rel="stylesheet">
 
 </head>
 
@@ -22,7 +22,8 @@
     <div id="preloader">
         <div class="loader">
             <svg class="circular" viewBox="25 25 50 50">
-                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3"
+                    stroke-miterlimit="10" />
             </svg>
         </div>
     </div>
@@ -76,19 +77,23 @@
                                 <div class="dropdown-content-body">
                                     <ul>
                                         <li>
-                                            <a href="app-profile.html"><i class="icon-user"></i> <span>Profile</span></a>
+                                            <a href="app-profile.html"><i class="icon-user"></i>
+                                                <span>Profile</span></a>
                                         </li>
                                         <li>
-                                            <a href="email-inbox.html"><i class="icon-envelope-open"></i> <span>Inbox</span>
+                                            <a href="email-inbox.html"><i class="icon-envelope-open"></i>
+                                                <span>Inbox</span>
                                                 <div class="badge gradient-3 badge-pill badge-primary">3</div>
                                             </a>
                                         </li>
 
                                         <hr class="my-2">
                                         <li>
-                                            <a href="page-lock.html"><i class="icon-lock"></i> <span>Lock Screen</span></a>
+                                            <a href="page-lock.html"><i class="icon-lock"></i> <span>Lock
+                                                    Screen</span></a>
                                         </li>
-                                        <li><a href="page-login.html"><i class="icon-key"></i> <span>Logout</span></a></li>
+                                        <li><a href="page-login.html"><i class="icon-key"></i> <span>Logout</span></a>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -168,28 +173,34 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Data Table</h4>
+                                <h4 class="card-title">Data Pengguna</h4>
+                                <a href="{{ route('user.create', ['id' => $user->id]) }}" class="btn btn-primary">Tambah Pengguna</a>
+
                                 <div class="table-responsive">
                                     <table class="table table-striped table-bordered zero-configuration">
                                         <thead>
                                             <tr>
                                                 <th>No</th>
                                                 <th>Nama</th>
-                                                <th>Role</th>
+                                                <th>Email</th>
                                                 <th>Action</th>
 
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>System Architect</td>
-                                                <td>Edinburgh</td>
-                                                <td>
-                                                <a href="#" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i>Edit</a>
-                                                <a href="#" class="btn btn-xs btn-danger"><i class="fa fa-edit"></i>Hapus</a>
-                                                </td>
-                                            </tr>
+                                            @foreach ($data as $d)
+                                                <tr>
+                                                    <td>{{ $loop->iteration }}</td>
+                                                    <td>{{ $d->name }}</td>
+                                                    <td>{{ $d->email }}</td>
+                                                    <td>
+                                                        <a href="#" class="btn btn-primary"><i
+                                                                class="fa fa-edit"></i>     Edit</a>
+                                                        <a href="#" class="btn btn-danger"><i
+                                                                class="fa fa-trash"></i>     Hapus</a>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>
@@ -210,7 +221,8 @@
         ***********************************-->
         <div class="footer">
             <div class="copyright">
-                <p>Copyright &copy; Designed & Developed by <a href="https://themeforest.net/user/quixlab">Quixlab</a> 2018</p>
+                <p>Copyright &copy; Designed & Developed by <a href="https://themeforest.net/user/quixlab">Quixlab</a>
+                    2018</p>
             </div>
         </div>
         <!--**********************************
@@ -224,15 +236,16 @@
     <!--**********************************
         Scripts
     ***********************************-->
-    <script src="/assets/plugins/common/common.min.js"></script>
-    <script src="/assets/js/custom.min.js"></script>
-    <script src="/assets/js/settings.js"></script>
-    <script src="/assets/js/gleek.js"></script>
-    <script src="/assets/js/styleSwitcher.js"></script>
+    <script src="{{ asset('/assets/plugins/common/common.min.js') }}"></script>
+    <script src="{{ asset('/assets/js/custom.min.js') }}"></script>
+    <script src="{{ asset('/assets/js/settings.js') }}"></script>
+    <script src="{{ asset('/assets/js/gleek.js') }}"></script>
+    <script src="{{ asset('/assets/js/styleSwitcher.js') }}"></script>
 
-    <script src="/assets/plugins/tables/js/jquery.dataTables.min.js"></script>
-    <script src="/assets/plugins/tables/js/datatable/dataTables.bootstrap4.min.js"></script>
-    <script src="/assets/plugins/tables/js/datatable-init/datatable-basic.min.js"></script>
+    <script src="{{ asset('/assets/plugins/tables/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('/assets/plugins/tables/js/datatable/dataTables.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('/assets/plugins/tables/js/datatable-init/datatable-basic.min.js') }}"></script>
+
 
 </body>
 

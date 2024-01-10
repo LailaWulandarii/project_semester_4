@@ -2,7 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-Route::get('/dashboard', [HomeController::class, 'dashboard']);
+Route::get('/', [HomeController::class, 'dashboard']);
+Route::get('/user', [HomeController::class, 'index']);
+Route::get('/create', [HomeController::class, 'user.create'])->name('user.create');
+// Route::get('/login', [HomeController::class, 'login']);
 /*
 |--------------------------------------------------------------------------
 | Web Routes

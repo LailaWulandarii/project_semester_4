@@ -11,9 +11,11 @@ class HomeController extends Controller
     // {
     //     return "Selamat Routing Anda Sudah Benar";
     // }
-public function dashboard (){
-$data = User::get();
-    return view('dashboard', compact('data'));
-    // return view('home');
-}
+    public function home()
+    {
+        $data = User::get();
+        // return view('index', compact('data'));
+        return view('home', compact('data'));
+        // return view('home');
+    }
 }
