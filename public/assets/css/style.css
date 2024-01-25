@@ -92,13 +92,13 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
   --green: #2dce89;
   --teal: #00A9A2;
   --cyan: #11cdef;
-  --backgorund: #b8c1ec;
+  --backgorund: #F7F6F2;
   --white: #fff;
   --gray: #f7fafc;
   --gray-dark: #333333;
   --text: #fffffe;
-  --primary: #232946;
-  --secondary: #753549;
+  --primary: #4A627C;
+  --secondary: #344861;
   --success: #6fd96f;
   --info: #4d7cff;
   --warning: #f29d56;
@@ -5119,7 +5119,7 @@ input[type="button"].btn-block {
   padding: 0.75rem 1rem;
   margin-bottom: 1rem;
   list-style: none;
-  background-color: #e9ecef;
+  /* background-color: #e9ecef; */
   border-radius: 0.25rem;
 }
 
@@ -11415,7 +11415,7 @@ sub {
   position: absolute;
   left: 0;
   top: 0;
-  background: var(--backgorund);
+  background-color: var(--primary);
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.15);
   transition: all .2s ease;
 }
@@ -11436,23 +11436,30 @@ sub {
 
 .nav-header .brand-logo {
   z-index: 999;
+  background-color: var(--primary);
 }
 
 .nav-header .brand-logo a {
   padding: 1.607rem 1.8125rem;
   display: block;
+  background-color: var(--primary);
 }
 
 .nav-header .brand-logo a i {
   font-size: 1.375rem;
+  background-color: var(--primary);
+
 }
 
 .nav-header .brand-logo a b img {
   max-width: 1.5625rem;
+  background-color: var(--backgorund);
+
 }
 
 .nav-header .brand-logo a span {
   font-size: 1.125rem;
+  background-color: var(--backgorund);
 }
 
 .nav-control {
