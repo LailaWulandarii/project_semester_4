@@ -174,7 +174,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">Data Pengguna</h4>
-                                <a href="{{ route('user.create', ['id' => $user->id]) }}" class="btn btn-primary">Tambah Pengguna</a>
+                                <a href="{{ route('create', ['id' => $user->id]) }}" class="btn btn-primary">Tambah Pengguna</a>
 
                                 <div class="table-responsive">
                                     <table class="table table-striped table-bordered zero-configuration">
